@@ -1,20 +1,20 @@
 # PythonProject
 Conference schedule Programming python script
 
-##Code is created in Python 3 using Pandas Data frame:
-##Before running the code Need to run the following steps
-1.	Install Pandas package if not there else you will get module not present error (pip install pandas)
-a.	It will help us to create objects in the data frames as it’s quite easy to understand and code.
-2.	Copy the CONFERENCEROOMS.xlsx to your directory it’s currently using from my local python directory (
+# Code is created in Python 3 using Pandas Data frame:
+# Before running the code Need to run the following steps
+1.Install Pandas package if not there else you will get module not present error (pip install pandas)
+ a.It will help us to create objects in the data frames as it’s quite easy to understand and code.
+2.Copy the CONFERENCEROOMS.xlsx to your directory it’s currently using from my local python directory (
 pd.read_excel('C:\Python39\CONFERENCEROOMS.xlsx',index = False)
 
-#Please replace the directory path with your local directory path in quotes at line no 5 in the script.
+# Please replace the directory path with your local directory path in quotes at line no 5 in the script.
 3.	Copy the python script to your python path from where you are accessing python 3. 
 a.	If you are running from terminal need to mention full path like below
  
 
-Got to your Python 3 Directory like cd C:\Python3 Run the Python script 
-#python conference_room_schedule.py
+Got to Python 3 Directory like cd C:\Python3 Run the Python script 
+# python conference_room_schedule.py
 It will popup one input message Enter Input Members,FloorNo,StartTime and Endtime
 pass the input one by one like below
 5
@@ -22,11 +22,11 @@ pass the input one by one like below
 10:30:00
 11:30:00
 
-Your script will run and it will provide you the expected output: for this case it is 9.547
+script will run and it will provide you the expected output: for this case it is 9.547
 
 
 
-Code Logic for conference rooms scenario:
+# Code Logic for conference rooms scenario:
 We are creating a data frame using .xlxs file as our input file with the help of pandas module.
 df = pd.read_excel('C:\Python39\CONFERENCEROOMS.xlsx',index = False)
 Our Input will be Floor_no followed by Room_no and Max_no as per the given scenario
@@ -64,7 +64,7 @@ Similarly we are creating for df2,df3 df4 df5 and df6
 We are assigning values in mask which will be having slot and start time and end time details for each case
  mask1 = df1['start_time'].between(start, end) | df1['end_time'].between(start,end)
 
-Note: for df1 we have created mask1 for df2 mask2 like that for easily understanding the logic.
+# Note: for df1 we have created mask1 for df2 mask2 like that for easily understanding the logic.
 
 In the For loop we are iterating for the closest rooms available as per the time slots 
 for row in newdf7['CASE']:
@@ -82,7 +82,7 @@ As this will always return bool value (True or False) we are checking for Match 
 
 This code will give us the available rooms:
 
-Note: from result_df we can have our output but as its mentioned in the question if we have more than one room available we should assign room on which team is present so for our case we are providing the room which is on 8th floor 
+# Note: from result_df we can have our output but as its mentioned in the question if we have more than one room available we should assign room on which team is present so for our case we are providing the room which is on 8th floor 
 """Assigning the room to the floor numbers if we have more than one room available"""
 if result_df_op.empty != 'True' and n in result_df_op['MAX_NO'].values:
     #print(n)
@@ -97,11 +97,6 @@ else:
     print("Room Not Found ")
 
 We are also handeling the code if we don’t get any available rooms as per the inputs.
-
-
-For reference I am attaching the below outputs with respect to input I have provided and verified.
-
-Note: Below code output generated from Pycharm tool
  
 
 
